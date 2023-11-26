@@ -1,13 +1,12 @@
 package ru.olesya.ProjectTest.Model;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+@NoArgsConstructor
+@AllArgsConstructor
+
 public class InputData {
     private String inputString;
-
-    public InputData() {
-    }
-    public InputData(String inputString) {
-        this.inputString = inputString;
-    }
 
     public String getInputString() {
         return inputString;

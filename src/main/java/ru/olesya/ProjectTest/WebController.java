@@ -1,18 +1,16 @@
 package ru.olesya.ProjectTest;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import ru.olesya.ProjectTest.Model.InputData;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
 
-@Controller
-public class UserController {
+@CrossOrigin
+@RestController
+@RequestMapping()
+public class WebController {
     @PostMapping("/calculateFrequency")
-    public Map<String, Integer> calculateFrequency(@RequestBody InputData data) {
-        String inputString = data.getInputString();
+    public Map<String, Integer> calculateFrequency(@RequestBody String inputString) {
         Map<Character, Integer> frequencyMap = new HashMap<>();
 
         for (char c : inputString.toCharArray()) { // Подсчет частоты каждого символа во входной строке
